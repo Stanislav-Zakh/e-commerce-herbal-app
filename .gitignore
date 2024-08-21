@@ -1,0 +1,41 @@
+# Front
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+# Visual Studio Code
+.vscode/*
+# Miscellaneous
+.angular
+# System files
+.DS_Store
+Thumbs.db
+# Other
+ssl-localhost-front
+angular-frontend/**/*conf*
+public
+* copy.*
+*.spec.ts
+
+# Back
+
+HELP.md
+target/
+
+### VS Code ###
+.vscode/
+### Other ###
+test/
+*mvn*
+**/js/*.ts
+*.properties
+### Key Store ###
+*.p12 
+
+
