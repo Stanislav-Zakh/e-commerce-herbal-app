@@ -1,0 +1,99 @@
+.product-detail-main-content {
+  background-color: var(--color-background);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-detail-wrapper {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-name {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.product-detail-price {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+}
+
+hr {
+  border-top: 1px solid var(--color-secondary);
+  margin: 2rem 0;
+}
+
+h4 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-detail-description {
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.back-to-list {
+  display: inline-block;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-to-list:hover {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .product-detail-main-content {
+      padding: 1rem;
+  }
+
+  .product-detail-wrapper {
+      padding: 1rem;
+  }
+
+  .product-detail-name {
+      font-size: 1.5rem;
+  }
+
+  .product-detail-price {
+      font-size: 1.25rem;
+  }
+}

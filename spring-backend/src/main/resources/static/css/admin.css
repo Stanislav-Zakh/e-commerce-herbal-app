@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#category_select {
+    margin-bottom: 20%;
+}
+
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-right: 20px;
+}
+
+.menu-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.less-trail {
+    height: 188px;
+
+}
+
+.menu-container-h {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20%;
+    margin-left: 8%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    height: 100px;
+    overflow-x: scroll;
+
+}
+
+
+h2 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+textarea {
+    height: 100px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-list li {
+    margin-bottom: 10px;
+}
+
+.product-list li {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.horizontal-ul {
+    white-space: nowrap;
+}
+
+.horizontal-li {
+    display: inline-block;
+}
+
+.footer-link {
+    margin-left: 90%;
+}
+
+.footer-link a{
+  color: #4CAF50;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-item span {
+    flex: 1;  
+}
+
+.list-item span:hover {
+    flex: 1; 
+    text-decoration: underline;
+}
+
+.list-item a {
+    margin-left: 10px; 
+    text-decoration: none;
+}
+
+.list-item a:hover {
+    margin-left: 10px; 
+    text-decoration: underline;
+}
+
+
+

@@ -1,0 +1,24 @@
+
+<h2>Featured Products</h2>
+<div class="product-grid">
+    <div *ngFor="let product of productList" class="product-card">
+      <a routerLink="/product-details/{{product.id}}" class="product-link">
+        <img src="https://via.placeholder.com/150?text=Product+Image" class="product-image" alt="{{product.name}}">
+        <div class="product-info">
+          <h5 class="product-title">{{product.name}}</h5>
+          <p class="product-price">{{product.unitPrice | currency: 'USD'}}</p>
+        </div>
+      </a>
+      <button (click)="addToCart(product)" class="add-to-cart-button">Add to Basket</button>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <ngb-pagination
+    [(page)]="pageNumber"
+    [collectionSize]="collectionSize"
+    [pageSize]="pageSize"
+    (pageChange)="handleData()"
+    [rotate]="true"
+    class="pagination">
+  </ngb-pagination>

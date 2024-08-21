@@ -1,0 +1,18 @@
+<div class="product-detail-main-content">
+  <div class="product-detail-section-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="product-detail-wrapper">
+          <img src="https://via.placeholder.com/150?text=Product+Image" class="img-responsive" alt="{{ product.name }}" width="200px">
+          <h3 class="product-detail-name">{{ product.name }}</h3>
+          <div class="product-detail-price">{{ product.unitPrice | currency: 'USD'}}</div>
+          <button (click)="addToCart(product)" class="btn btn-primary mt-3 mb-3">Add to Basket</button>
+          <hr>
+          <h4>Product Description</h4>
+          <p class="product-detail-description">{{ product.description }}</p>
+          <a routerLink="{{previousLink}}" class="back-to-list mt-5">Back to Product List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

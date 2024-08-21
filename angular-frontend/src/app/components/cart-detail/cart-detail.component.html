@@ -1,0 +1,57 @@
+<div class="cart-main-content">
+  <div class="cart-section-content">
+    <div class="cart-container">
+      <div *ngIf="cartItemList.length > 0">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th width="20%">Product Image</th>
+              <th width="50%">Product Detail</th>
+              <th width="30%"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cartItem of cartItemList">
+              <td><img src="https://via.placeholder.com/150?text=Product+Image" class="cart-img-responsive"></td>
+              <td>
+                <span class="cart-product-name">{{cartItem.name}}</span>
+                <br><br>
+                <span class="cart-product-price">{{cartItem.unitPrice}}</span>
+              </td>
+              <td>
+                <div class="cart-item-actions">
+                  <label>Quantity: </label>
+                  <div class="cart-item-quantity">
+                    <button (click)="incrementItem(cartItem)" class="btn btn-green btn-small">
+                      <i class="fas fa-plus"></i> 
+                    </button>
+                    <span class="cart-item-quantity-value">{{cartItem.quantity}}</span>
+                    <button (click)="decrementItem(cartItem)" class="btn btn-green btn-small">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                  </div>
+                  <label class="cart-subtotal-label mt-2">Subtotal:</label>
+                  <span class="cart-subtotal-value">{{cartItem.unitPrice * cartItem.quantity}}</span>
+                  <br><br>
+                  <button (click)="removeItem(cartItem)" class="btn btn-green btn-small">Remove</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td class="cart-summary">
+                <p>Total Quantity: {{totalQuantity}}</p>
+                <p>Shipping: FREE</p>
+                <p>Total Price: {{totalPrice}}</p>
+                <a routerLink="/checkout" class="btn btn-green">Checkout</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="cartItemList.length == 0" class="cart-alert cart-alert-warning">
+        Cart is Empty
+      </div>
+    </div>
+  </div>
+</div>

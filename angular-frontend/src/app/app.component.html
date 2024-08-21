@@ -1,0 +1,44 @@
+<div class="herbal-eshop">
+    <header class="main-header">
+        <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle fill="white" r="10" cx="10" cy="10"></circle>
+                <rect fill="#2c5e2e" width="5" height="16" x="7.5" y="2"></rect>
+                <rect fill="#2c5e2e" width="16" height="5" x="2" y="7.5"></rect>
+            </svg>
+            <span class="website-name">Herbal E-Shop</span>
+        </div>
+        <app-search-bar class="search-bar"></app-search-bar>
+        <app-cart-status class="cart-status"></app-cart-status>
+    </header>
+
+
+    <div class="main-content">
+        <app-left-navigation-menu class="side-menu"></app-left-navigation-menu>
+        <main class="product-display">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>About Us</h5>
+                <p>We provide high-quality medicinal herbs sourced from organic farms. Our mission is to bring the benefits of nature to your doorstep.</p>
+            </div>
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Contact Us</h5>
+                <p>Email: email</p>
+                <p>Phone: phone </p>
+            </div>
+        </div>
+    </footer>
+</div>

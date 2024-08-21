@@ -1,0 +1,146 @@
+<div class="checkout-content">
+    <div class="checkout-container">
+        <form [formGroup]="checkoutForm" (ngSubmit)="submitPurchase()" class="checkout-form">
+            <!-- Customer Form Group -->
+            <div formGroupName="customer" class="form-section">
+                <h2>Customer</h2>
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input formControlName="firstName" type="text" id="firstName">
+                    <div *ngIf="firstName!.invalid && (firstName!.dirty || firstName!.touched)" class="error-message">
+                        <div *ngIf="firstName!.errors?.required">First Name is required.</div>
+                        <div *ngIf="firstName!.errors?.minlength">First Name must be at least 2 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input formControlName="lastName" type="text" id="lastName">
+                    <div *ngIf="lastName!.invalid && (lastName!.dirty || lastName!.touched)" class="error-message">
+                        <div *ngIf="lastName!.errors?.required">Last Name is required.</div>
+                        <div *ngIf="lastName!.errors?.minlength">Last Name must be at least 2 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input formControlName="email" type="email" id="email">
+                    <div *ngIf="email!.invalid && (lastName!.dirty || lastName!.touched)" class="error-message">
+                        <div *ngIf="email!.errors?.required">Email is required.</div>
+                        <div *ngIf="email!.errors?.pattern">You should provide a valid email address.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing Address -->
+            <div formGroupName="billingAddress" class="form-section">
+                <h2>Billing Address</h2>
+                <div class="form-group">
+                    <label for="billingCountry">Country</label>
+                    <select formControlName="country" id="billingCountry">
+                        <option>Country 1</option>
+                        <option>Country 2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="billingStreet">Street</label>
+                    <input formControlName="street" type="text" id="billingStreet">
+                    <div *ngIf="billingStreet!.invalid && (billingStreet!.dirty || billingStreet!.touched)" class="error-message">
+                        <div *ngIf="billingStreet!.errors?.required">Street Name is required.</div>
+                        <div *ngIf="billingStreet!.errors?.minlength">Street Name must be at least 2 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingCity">City</label>
+                    <input formControlName="city" type="text" id="billingCity">
+                    <div *ngIf="billingCity!.invalid && (billingCity!.dirty || billingCity!.touched)" class="error-message">
+                        <div *ngIf="billingCity!.errors?.required">City Name is required.</div>
+                        <div *ngIf="billingCity!.errors?.minlength">City Name must be at least 2 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingState">State</label>
+                    <select formControlName="state" id="billingState">
+                        <option>State 1</option>
+                        <option>State 2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="billingZipCode">Zip Code</label>
+                    <input formControlName="zipCode" type="text" id="billingZipCode">
+                    <div *ngIf="zipCode!.invalid && (zipCode!.dirty || zipCode!.touched)" class="error-message">
+                        <div *ngIf="zipCode!.errors?.required">Zip Code is required.</div>
+                        <div *ngIf="zipCode!.errors?.minlength">Zip Code must be at least 2 characters long.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit Card -->
+            <div formGroupName="creditCard" class="form-section">
+                <h2>Credit Card</h2>
+                <div class="form-group">
+                    <label for="cardType">Card Type</label>
+                    <select formControlName="cardType" id="cardType">
+                        <option>Visa</option>
+                        <option>Mastercard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nameOnCard">Name on Card</label>
+                    <input formControlName="nameOnCard" type="text" id="nameOnCard">
+                    <div *ngIf="nameOnCard!.invalid && (nameOnCard!.dirty || nameOnCard!.touched)" class="error-message">
+                        <div *ngIf="nameOnCard!.errors?.required">Name on Card is required.</div>
+                        <div *ngIf="nameOnCard!.errors?.minlength">Name on Card must be at least 2 characters long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input formControlName="cardNumber" type="text" id="cardNumber">
+                    <div *ngIf="cardNumber!.invalid && (cardNumber!.dirty || cardNumber!.touched)" class="error-message">
+                        <div *ngIf="cardNumber!.errors?.required">Card number is required.</div>
+                        <div *ngIf="cardNumber!.errors?.pattern">Card number must be 16 numbers long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="securityCode">Security Code</label>
+                    <input formControlName="securityCode" type="text" id="securityCode">
+                    <div *ngIf="securityCode!.invalid && (securityCode!.dirty || securityCode!.touched)" class="error-message">
+                        <div *ngIf="securityCode!.errors?.required">Security Code is required.</div>
+                        <div *ngIf="securityCode!.errors?.pattern">Security Code must be 3 numbers long.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="expirationMonth">Expiration Month</label>
+                    <select formControlName="expirationMonth" id="expirationMonth">
+                        <option>01</option>
+                        <option>02</option>
+                    </select>
+                    <div *ngIf="expirationMonth!.invalid && (expirationMonth!.dirty || expirationMonth!.touched)" class="error-message">
+                        <div *ngIf="expirationMonth!.errors?.required">Expiration month is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="expirationYear">Expiration Year</label>
+                    <select formControlName="expirationYear" id="expirationYear">
+                        <option>2024</option>
+                        <option>2025</option>
+                    </select>
+                    <div *ngIf="expirationYear!.invalid && (expirationYear!.dirty || expirationYear!.touched)" class="error-message">
+                        <div *ngIf="expirationYear!.errors?.required">Expiration Year is required.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details -->
+            <div class="form-section order-summary">
+                <h2>Review Your Order</h2>
+                <p>Total Quantity: {{totalQuantity}}</p> 
+                <p>Shipping: FREE</p>
+                <p class="total-price">Total Price: {{totalPrice | currency : 'USD'}}</p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button type="submit" class="submit-button">Purchase</button>
+            </div>
+        </form>
+    </div>
+</div>

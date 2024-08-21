@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" th:href="@{/css/admin-welcome.css}">
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Welcome to the Admin Page</h1>
+        <div class="main-content">
+            <div class="product-action-container">
+                <form th:action="@{products}" method="get">
+                    <select style="margin-bottom: 20px;" id="category_select" name="category_id" class="btn" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.categoryName}"></option>
+                    </select>
+                    <button type="submit" class="btn">Create New Product</button>
+                </form>
+            </div>
+            <div class="action-container">
+                <a th:href="@{categories}" class="btn">Create New Product Category</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

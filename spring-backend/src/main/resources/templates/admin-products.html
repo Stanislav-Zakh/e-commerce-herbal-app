@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <script th:src="@{/js/form_helper.js}"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="form-container">
+            <h2>Create New Product</h2>
+            <form id="productForm" th:action="@{products/save}" method="post" th:object="${product}">
+                <div>
+                    <input type="hidden" id="id" th:field="*{id}">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" th:field="*{name}" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" th:field="*{description}" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="unit_price">Unit Price:</label>
+                    <input type="number" id="unit_price" th:field="*{unitPrice}" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="image_url">Image URL:</label>
+                    <input type="text" id="image_url" th:field="*{imageURL}" required>
+                </div>
+                <div class="form-group">
+                    <label for="units_in_stock">Units in Stock:</label>
+                    <input type="number" id="units_in_stock" th:field="*{unitsInStock}" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category ID:</label> 
+                    <select id="category" th:field="*{category.id}" required>
+                        <option th:each="category : ${categories}" 
+                               th:value="${category.id}"
+                               th:selected="${category.id} == ${default_category} ? true : false" 
+                               th:text="${category.categoryName}"></option>  
+                    </select>    
+                </div>
+                <button type="submit" class="btn">Add Product</button>
+            </form>
+            <div class="footer-link">
+                <a th:href="@{admin}">Go Back</a>
+            </div>
+        </div>
+        <div class="menu-container">
+            <h2>Existing Products</h2>
+            <ul class="product-list">
+                <li th:onclick="reset()">
+                    New Product
+                </li>
+                 <li class="list-item"
+                 th:each="product_l : ${products}">
+                 <span  th:text="${product_l.name}" 
+                       th:data-id="${product_l.id}" 
+                       th:data-name="${product_l.name}" 
+                       th:data-description="${product_l.description}" 
+                       th:data-unitprice="${product_l.unitPrice}" 
+                       th:data-imageurl="${product_l.imageURL}" 
+                       th:data-unitsinstock="${product_l.unitsInStock}" 
+                       th:data-categoryid="${product_l.category.id}" 
+                       th:onclick="populateForm(this)"></span> 
+                 <a style="color: coral;"  
+                 th:href="@{products/remove(product_id=${product_l.id},category_id=${product_l.category.id})}">Remove Product</a>  
+                </li>
+            </ul>
+        </div>
+</body>
+</html>

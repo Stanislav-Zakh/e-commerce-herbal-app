@@ -1,0 +1,27 @@
+.category-title:hover {
+    color: var(--color-text);
+}
+
+
+.category-title.collapsed .collapse-icon {
+    transform: rotate(-135deg); /* Rotate to right-pointing triangle */
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.collapse-icon {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    margin-left: 0.5em;
+    border-left: 0.15em solid currentColor;
+    border-bottom: 0.15em solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+ul {
+    transition: opacity 0.3s ease;
+}

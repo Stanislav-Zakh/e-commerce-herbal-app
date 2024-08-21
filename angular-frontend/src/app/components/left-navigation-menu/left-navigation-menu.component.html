@@ -1,0 +1,9 @@
+<nav>
+  <h3 class="category-title" (click)="hideCategories()" [class.collapsed]="!isCategoriesVisible">Categories<span class="collapse-icon"></span></h3>
+    <ul [class.hidden]="!isCategoriesVisible">
+      <li *ngFor="let category of categoryList">
+        <a routerLink="/products/{{category.id}}" routerLinkActive="active-link">{{category.categoryName}}</a>
+      </li>
+    </ul>
+
+</nav>
